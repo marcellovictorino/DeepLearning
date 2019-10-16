@@ -12,7 +12,7 @@ ap = argparse.ArgumentParser(description=describe_predict)
 # Add Arguments for special functionalities
 # Required argument
 ap.add_argument('image_file', type=str, help='path to image to be classified')
-ap.add_argument('checkpoint', type=str, help='previously trained model to be loaded')
+ap.add_argument('checkpoint', type=str, help='path to checkpoint file of previously trained model to be loaded')
 
 # Optionl arguments
 ap.add_argument('--top_k', type=int, help='returns the predicted label and its probability of the Top K classes. Default to 5', default=5)
