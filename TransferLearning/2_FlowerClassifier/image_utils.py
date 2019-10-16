@@ -1,29 +1,14 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 # Imports here
 import torch
-# from torch import nn
-# from torchvision import datasets, transforms, models
 
 import matplotlib.pyplot as plt
 from time import time
 from PIL import Image
 import numpy as np
-# import copy
 import seaborn as sns
 
 import train_utils
 import json
-
-get_ipython().run_line_magic('matplotlib', 'inline')
-
-
-# In[ ]:
-
 
 def load_checkpoint(checkpoint):
     '''
@@ -46,9 +31,6 @@ def load_checkpoint(checkpoint):
     optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
     
     return model, optimizer, criterion, checkpoint
-
-
-# In[15]:
 
 
 def process_image(image_path):
@@ -87,9 +69,6 @@ def process_image(image_path):
     return im
 
 
-# In[16]:
-
-
 def imshow(image, ax=None):
     """Transforms back from Tensor to Image format and display."""
     if ax is None:
@@ -115,18 +94,12 @@ def imshow(image, ax=None):
     return ax
 
 
-# In[ ]:
-
-
 def load_cat_to_name(cat_to_name_file='cat_to_name.json'):
 
     with open(cat_to_name_file, 'r') as f:
         cat_to_name = json.load(f)
         
     return cat_to_name
-
-
-# In[143]:
 
 
 def predict(image_path, model, device, cat_to_name, k=5):
@@ -146,9 +119,6 @@ def predict(image_path, model, device, cat_to_name, k=5):
     # Use GPU if available
     input_tensor = input_tensor.to(device)   
     
-#     # As recommended, convert input image to FloatTensor
-#     input_tensor = input_tensor.float()
-    
     # Add expected batch information for a single image
     input_tensor = input_tensor.unsqueeze_(0)
 
@@ -160,38 +130,11 @@ def predict(image_path, model, device, cat_to_name, k=5):
     # unpack from Tensor back to simple list
     top_class = top_class.squeeze().tolist()
     top_p = top_p.squeeze().tolist()
-        
+
     # Convert indices to actual classes
-    idx_to_class = {val: key for key,val in class_to_idx.items()}
+    idx_to_class = {val: key for key,val in model.class_to_idx.items()}
     
     top_label = [idx_to_class[class_] for class_ in top_class]
-    top_flower = [cat_to_name[label] for label in top_label]
+    top_name = [cat_to_name[label] for label in top_label]
         
-    return top_p, top_label, top_flower
-
-
-# In[145]:
-
-
-# Display an image along with the top 5 classes
-import seaborn as sns
-def display_result(image_path, model):
-    
-    fig, axes = plt.subplots(2,1, figsize=(5,8))
-    
-    # Set up title
-    flower_num = image_path.split('/')[2]
-    title = checkpoint['class_to_idx'].get(str(flower_num))
-        
-    # Plot flower
-    img = process_image(image_path)
-    axes[0].set_title(title)
-    imshow(img, ax=axes[0]);
-    
-    # Make prediction
-    probs, classes, flowers = predict(image_path, model)
-    
-    # Plot bar chart
-    sns.barplot(x=probs, y=flowers, ax=axes[1],color=sns.color_palette()[0])
-    plt.show();
-
+    return top_p, top_label, top_name

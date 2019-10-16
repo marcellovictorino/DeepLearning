@@ -1,0 +1,34 @@
+Epoch [1/3] Learning Rate: 0.001000 | Train Loss: 2.560 | Validation Loss: 0.932 | Validation Accuracy: 80.37% | Time: 119 s
+Epoch [2/3] Learning Rate: 0.001000 | Train Loss: 1.038 | Validation Loss: 0.564 | Validation Accuracy: 87.61% | Time: 212 s
+Epoch [3/3] Learning Rate: 0.001000 | Train Loss: 0.768 | Validation Loss: 0.366 | Validation Accuracy: 91.73% | Time: 303 s
+    --> Best Validation Accuracy: 91.73%
+
+########## TESTING ##########
+Test Loss: 0.498 | Test Accuracy: 93.75% | Time: 0 sec
+Test Loss: 0.654 | Test Accuracy: 84.38% | Time: 1 sec
+Test Loss: 0.377 | Test Accuracy: 93.75% | Time: 1 sec
+Test Loss: 0.314 | Test Accuracy: 93.75% | Time: 2 sec
+Test Loss: 0.480 | Test Accuracy: 87.50% | Time: 2 sec
+Test Loss: 0.177 | Test Accuracy: 96.88% | Time: 3 sec
+Test Loss: 0.717 | Test Accuracy: 71.88% | Time: 3 sec
+Test Loss: 0.510 | Test Accuracy: 90.62% | Time: 4 sec
+Test Loss: 0.076 | Test Accuracy: 100.00% | Time: 4 sec
+Test Loss: 0.325 | Test Accuracy: 90.62% | Time: 5 sec
+Test Loss: 0.436 | Test Accuracy: 90.62% | Time: 5 sec
+Test Loss: 0.212 | Test Accuracy: 96.88% | Time: 6 sec
+Test Loss: 0.218 | Test Accuracy: 93.75% | Time: 6 sec
+Test Loss: 0.104 | Test Accuracy: 96.88% | Time: 7 sec
+Test Loss: 0.511 | Test Accuracy: 90.62% | Time: 7 sec
+Test Loss: 0.337 | Test Accuracy: 90.62% | Time: 8 sec
+Test Loss: 0.177 | Test Accuracy: 100.00% | Time: 8 sec
+Test Loss: 0.100 | Test Accuracy: 100.00% | Time: 9 sec
+Test Loss: 0.180 | Test Accuracy: 93.75% | Time: 9 sec
+Test Loss: 0.275 | Test Accuracy: 93.75% | Time: 10 sec
+Test Loss: 0.343 | Test Accuracy: 100.00% | Time: 10 sec
+Test Loss: 0.421 | Test Accuracy: 90.62% | Time: 10 sec
+Test Loss: 0.654 | Test Accuracy: 78.12% | Time: 11 sec
+Test Loss: 0.390 | Test Accuracy: 93.75% | Time: 11 sec
+Test Loss: 0.804 | Test Accuracy: 71.88% | Time: 12 sec
+Test Loss: 1.361 | Test Accuracy: 73.68% | Time: 12 sec
+
+    --> Overall average Test Accuracy: 90.69%

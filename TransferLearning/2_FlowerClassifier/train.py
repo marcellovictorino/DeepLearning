@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
 # [ArgParse Documentation](https://docs.python.org/3/library/argparse.html)
 
 # Import required libraries

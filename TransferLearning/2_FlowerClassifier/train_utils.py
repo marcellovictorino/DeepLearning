@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
 # This is the supporting script with the main steps used while training an Artificial Neural Network using the Transfer Learning approach on the pre-trained models made available by PyTorch.
 
 # Imports here
